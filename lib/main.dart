@@ -8,6 +8,7 @@ import 'features/dashboard/views/dashboard_view.dart';
 import 'firebase_options.dart';
 
 void main() async {
+  print('main');
   WidgetsFlutterBinding.ensureInitialized();
 
   Bloc.observer = CustomBlocObserver();
