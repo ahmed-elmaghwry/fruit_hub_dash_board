@@ -4,7 +4,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:fruit_hub_dash_board/core/services/stoarage_service.dart';
 import 'package:path/path.dart' as b;
 
-class FireStorage implements StoarageService {
+class FireStorage implements StorageService {
   final stoargeReference = FirebaseStorage.instance.ref();
   @override
   Future<String> uploadFile(File file, String path) async {

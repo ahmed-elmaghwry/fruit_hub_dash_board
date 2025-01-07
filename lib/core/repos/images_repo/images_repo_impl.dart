@@ -9,7 +9,7 @@ import 'images_repo.dart';
 
 
 class ImagesRepoImpl implements ImagesRepo {
-  final StoarageService stoarageService;
+  final StorageService stoarageService;
 
   ImagesRepoImpl(this.stoarageService);
   @override

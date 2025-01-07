@@ -14,11 +14,11 @@ import 'firestore_service.dart';
 final getIt = GetIt.instance;
 
 void setupGetit() {
-  getIt.registerSingleton<StoarageService>(FireStorage());
+  getIt.registerSingleton<StorageService>(FireStorage());
   getIt.registerSingleton<DatabaseService>(FireStoreService());
 
   getIt.registerSingleton<ImagesRepo>(
-      ImagesRepoImpl(getIt.get<StoarageService>()));
+      ImagesRepoImpl(getIt.get<StorageService>()));
   getIt.registerSingleton<ProductsRepo>(
     ProductsRepoImpl(
       getIt.get<DatabaseService>(),
