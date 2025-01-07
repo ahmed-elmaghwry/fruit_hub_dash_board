@@ -3,6 +3,7 @@ class BackendEndpoint {
   static const addUserData = 'users';
   static const getUsersData = 'users';
   static const isUserExists = 'users';
+  static const bucketName = 'fruits_images';
   static const productsCollection = 'products';
   static const kSupabaseUrl = 'https://ezdgwtvgtcwuidfnhdlf.supabase.co';
   static const kSupabaseKey =
