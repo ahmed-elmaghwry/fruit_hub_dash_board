@@ -8,6 +8,11 @@ import '../utils/backend_endpoint.dart';
 class SupabaseStorageService implements StorageService {
   static late Supabase _supabase;
 
+  static createBucket({required String bucketName}) async {
+    await _supabase.client.storage
+        .createBucket(bucketName);
+  }
+
   static initSupabase() async {
     _supabase = await Supabase.initialize(
       url: BackendEndpoint.kSupabaseUrl,
@@ -23,6 +28,5 @@ class SupabaseStorageService implements StorageService {
         .from(BackendEndpoint.bucketName)
         .upload('$path/$fileName.$extensionName', file);
     return result;
-
   }
 }
