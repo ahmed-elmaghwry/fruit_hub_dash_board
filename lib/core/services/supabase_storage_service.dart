@@ -9,8 +9,20 @@ class SupabaseStorageService implements StorageService {
   static late Supabase _supabase;
 
   static createBucket({required String bucketName}) async {
-    await _supabase.client.storage
-        .createBucket(bucketName);
+
+
+    try {
+      await _supabase.client.storage.createBucket(bucketName);
+      print('Bucket $bucketName created successfully.');
+    } catch (e) {
+      if (e is StorageException && e.statusCode == 409) {
+        print('Bucket $bucketName already exists.');
+      } else {
+        print('An error occurred: $e');
+      }
+    }
+
+
   }
 
   static initSupabase() async {
