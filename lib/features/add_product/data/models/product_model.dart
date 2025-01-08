@@ -34,6 +34,10 @@ class ProductModel {
       required this.isFeatured,
       this.imageUrl});
 
+
+
+
+  //
   factory ProductModel.fromEntity(ProductEntity addProductInputEntity) {
     return ProductModel(
         reviews: addProductInputEntity.reviews
